@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Amount</th>
+      <th>From Currency</th>
+      <th>To Currency</th>
+    </tr>
+    <tr>
+      <th><input type="text" name="Tiền" value=" " id="tien"></th>
+      <th><select name="tiền" id="selevt1">
+        <option value="VND" >VND</option>
+        <option value="USD" >USD</option>
+      </select></th>
+      <th><select name="tiền" id="select2">
+        <option value="VND" >VND</option>
+        <option value="USD" >USD</option>
+      </select></th>
+      <td><input type="submit" value="Convert" onclick="convert()"></td>
+    </tr>
+    <tr id="show"></tr>
+  </table>
+<script>
+  function convert() {
+    let tien = document.getElementById("tien").value;
+    let select1 = document.getElementById("selevt1").value;
+    let select2 = document.getElementById("select2").value;
+
+    if (select1 === select2){
+      document.getElementById("show").innerText = tien;
+    }
+    if (select1 === "VND" && select2 === "USD"){
+      document.getElementById("show").innerText = tien/23000;
+    }
+    if (select1 === "USD" && select2 === "VND"){
+      document.getElementById("show").innerText = tien*23000;
+    }
+
+  }
+
+
+
+</script>
+</body>
+</html>

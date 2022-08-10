@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<table>
+  <tr>
+    <th><input type="number" name="số thứ nhất" placeholder="Số thứ nhất" id="num11"></th>
+    <th><input type="number" name="số thứ hai" placeholder="Số thứ hai" id="num22"></th>
+  </tr>
+  <tr id="operator">
+    <td><button onclick="chucnang('+')"> Addition(+) </button></td>
+    <td><button onclick="chucnang('-')"> Subtraction(-) </button></td>
+    <td><button onclick="chucnang('*')"> Multiplication(*) </button></td>
+    <td><button onclick="chucnang('/')"> Devision(/) </button></td>
+  </tr>
+ <tr id="result"></tr>
+</table>
+<script>
+  function chucnang(operator) {
+    let num1 = document.getElementById("num11").value;
+    let num2 = document.getElementById("num22").value;
+    let result = 0;
+
+    if(operator === "+"){
+      result = parseInt(num1) + parseInt(num2);
+      document.getElementById("result").innerText=result;
+    }
+    if(operator === "-"){
+      result = parseInt(num1) - parseInt(num2);
+      document.getElementById("result").innerText=result;
+    }
+    if(operator === "*"){
+      result = parseInt(num1) * parseInt(num2);
+      document.getElementById("result").innerText=result;
+    }
+    if(operator === "/"){
+      result = parseInt(num1) / parseInt(num2);
+      document.getElementById("result").innerText=result;
+
+    }
+  }
+
+</script>
+</body>
+</html>
